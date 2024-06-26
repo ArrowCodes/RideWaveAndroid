@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile_black"
+            android:fontFamily="@font/sf"
+            android:title="@string/profile" />
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/my_rides_ic"
+            android:fontFamily="@font/sf"
+            android:title="@string/my_rides" />
+
+
+        <item
+            android:id="@+id/nav_sos_contacts"
+            android:icon="@drawable/sos_contacts_ic"
+            android:fontFamily="@font/sf"
+            android:title="@string/sos_contacts" />
+        <item
+            android:id="@+id/nav_my_notifications"
+            android:icon="@drawable/notifications_ic"
+            android:fontFamily="@font/sf"
+            android:title="@string/notifications" />
+        <item
+            android:id="@+id/nav_referrals"
+            android:icon="@drawable/referrals_ic"
+            android:fontFamily="@font/sf"
+            android:title="@string/referrals" />
+
+
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/about_ic"
+            android:fontFamily="@font/sf"
+            android:title="@string/about" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout_ic"
+            android:fontFamily="@font/sf"
+            android:title="@string/logout" />
+    </group>
+
+
+
+</menu>

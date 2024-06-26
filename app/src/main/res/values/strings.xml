@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">RideWave</string>
+    <string name="slide_screen_one">Register to tripe ride and start an exciting journey of affordable ride-hailing experience.</string>
+    <string name="slide_screen_two">Enjoy a smooth,well-covered and safeguarded ride-hailing experience.</string>
+    <string name="slide_screen_three">Rate trip,suggest a convenient update and many more features.</string>
+    <string name="navigation_string">Join a vibrant community of TripTiders</string>
+    <string name="rate_and_more">Rate And More</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="please_enter_code">Please enter the 6 digit code we sent to +2547########</string>
+    <string name="otp_string">######</string>
+    <string name="resend_otp">Resend Otp</string>
+    <string name="join_top_notch">Join a community of ride-hailers.</string>
+    <string name="my_rides">My Rides</string>
+    <string name="my_wallet">My Wallet</string>
+    <string name="sos_contacts">Sos Contacts</string>
+    <string name="notifications">Notifications</string>
+    <string name="referrals">Referrals</string>
+    <string name="favorite_drivers">Favorite Drivers</string>
+    <string name="about">About</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="api_key">AIzaSyA6hYnSKAaLYCGom8zX5XG5BhiT2_KMx60</string>
+    <string name="pickup_location">Pickup Location</string>
+    <string name="enter_pickup_location">Enter Pickup Location</string>
+    <string name="drop_location">Drop Location</string>
+    <string name="enter_destination_location">Enter Destination Location</string>
+    <string name="available_balance">Available Balance</string>
+    <string name="load_wallet">Load Wallet</string>
+    <string name="trip_request_summary">Trip request summary</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="otp">OTP</string>
+
+
+    <string name="meal_price">Pay &#x20A6;4,000</string>
+    <string name="payment_prompt">Card details</string>
+    <string name="card_number">Card Number</string>
+    <string name="card_expiry">Card Expiry</string>
+    <string name="card_cvv">CVV</string>
+    <string name="pstk_public">pk_test_03509b5b24700285738916913ff51b76c95f5779</string>
+</resources>

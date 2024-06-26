@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/bottom_sheet_trip"
+    android:background="@android:color/white"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="left">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="29 Feb 2024 at 10:30PM"
+                android:id="@+id/date_tv"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:scaleType="fitCenter"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:visibility="gone"
+                android:text="Sienta"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="right">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="KES400"
+                android:id="@+id/fare_tv"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:scaleType="fitCenter"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="16 Min &amp; 5.5Kms"
+                android:id="@+id/distance_tv"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sf"
+        android:text="Requested Trip"
+        android:id="@+id/tripTV"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="15dp"
+        android:scaleType="fitCenter"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/ball_green"
+                />
+
+            <!-- Straight line -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="5dp"
+                android:background="@color/black"/>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/placeholder"
+
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="@string/pickup_location"
+                android:id="@+id/pick_up_tv"
+                android:textSize="16sp"
+                android:textColor="@color/black" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="Requested By:Kelvin Kagia "
+                android:textSize="16sp"
+                android:id="@+id/requested_tv"
+                android:layout_marginTop="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="16kms(3 Mins)"
+                android:textSize="16sp"
+                android:id="@+id/pickup_distance_tv"
+                android:layout_marginTop="15dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="16kms(3 Mins)"
+                android:textSize="16sp"
+                android:id="@+id/vehicle_details_tv"
+                android:layout_marginTop="15dp" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="@string/drop_location"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/drop_off_tv"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageView_track"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                 />
+
+            <ImageView
+                android:id="@+id/ratingDrawable"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignEnd="@id/imageView_track"
+                android:layout_alignBottom="@id/imageView_track"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="2dp"
+                android:src="@drawable/circular_drawable" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/ratingDrawable"
+                android:layout_alignBottom="@id/ratingDrawable"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ratingLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sf"
+                    android:text="4.8"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/star_icon" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="Andree Kimani"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:id="@+id/name_tv"
+                android:scaleType="fitCenter"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="Completed 120 trips"
+                android:id="@+id/pnumber_tv"
+                android:textSize="12sp"
+                android:scaleType="fitCenter"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                >
+
+                <at.markushi.ui.CircleButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/call_white_ic"
+                    android:id="@+id/call_button"
+                    app:cb_color="@color/red"
+                    app:cb_pressedRingWidth="8dip"
+                    />
+
+                <at.markushi.ui.CircleButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="10dp"
+                    android:id="@+id/sms_button"
+                    android:src="@drawable/sms_white_ic"
+                    app:cb_color="@color/colorPrimary"
+                    app:cb_pressedRingWidth="8dip"
+                    />
+
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linear_pay"
+        android:layout_marginTop="15dp"
+        >
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textColor="@color/red"
+           android:textStyle="bold"
+           android:textSize="18sp"
+           android:text="Pay for your Trip!"
+           android:layout_marginStart="10dp"
+           android:layout_marginEnd="10dp"
+           android:fontFamily="@font/sf"
+           android:visibility="gone"
+           />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="To complete your trip,kindly pay the taxi trip amount either directly to the driver by cash or if you prefer to pay via MPESA or cash click the button below(pay via app).We will notify the driver the amount paid to confirm and close the trip."
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            android:fontFamily="@font/sf"
+            />
+
+        <com.appz.abhi.simplebutton.SimpleButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/confirm_payB"
+            android:padding="16dp"
+            android:text="PAY VIA APP"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/sf"
+            app:button_background_color="@color/colorPrimary"
+            app:button_pressed_color="@color/colorPrimary"
+            app:button_shape="fillet"
+            app:button_text_color="@color/white"
+            app:button_type="solid"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+
+    <com.appz.abhi.simplebutton.SimpleButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/pickB"
+        android:padding="16dp"
+        android:text="Pick Passenger"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/sf"
+        app:button_background_color="@color/red"
+        app:button_pressed_color="@color/red"
+        app:button_shape="fillet"
+        app:button_text_color="@color/red"
+        app:button_type="outline"
+        tools:ignore="HardcodedText" />
+
+
+</LinearLayout>

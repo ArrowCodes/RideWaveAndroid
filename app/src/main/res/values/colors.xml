@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#34BB78</color>
+    <color name="colorPrimaryDark">#4D4D4D</color>
+    <color name="colorAccent">#3a67e0</color>
+    <color name="red">#FF0000</color>
+    <color name="white">#ffffff</color>
+    <color name="blue">#0000ff</color>
+    <color name="black">#000000</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="light_green">#33A532</color>
+    <color name="lime_green">#32CD32</color>
+    <color name="grey">#808080</color>
+    <color name="light_grey">#D3D3D3</color>
+    <color name="faint_grey">#CCCCCC </color>
+    <!-- Screens background color-->
+    <color name="bg_slider_screen1">#f4b241</color>
+    <color name="bg_slider_screen2">#16bc7d</color>
+    <color name="bg_slider_screen3">#203d8c</color>
+    <!-- dots inactive colors -->
+    <color name="dot_inactive_screen1">#ffa000</color>
+    <color name="dot_inactive_screen2">#008c57</color>
+    <color name="dot_inactive_screen3">#0e1e49</color>
+    <!-- dots active colors -->
+    <color name="dot_active_screen1">#f9c772</color>
+    <color name="dot_active_screen2">#74f7c5</color>
+    <color name="dot_active_screen3">#3a67e0</color>
+    <array name="array_dot_active">
+        <item>@color/dot_active_screen1</item>
+        <item>@color/dot_active_screen2</item>
+        <item>@color/dot_active_screen3</item>
+    </array>
+    <array name="array_dot_inactive">
+        <item>@color/dot_inactive_screen1</item>
+        <item>@color/dot_inactive_screen2</item>
+        <item>@color/dot_inactive_screen3</item>
+    </array>
+
+    <color name="black_overlay">#66000000</color>
+
+    <!--colors for modern ui-->
+    <color name="whiteTextColor">#fff</color>
+    <color name="primaryTextColor">#2661FA</color>
+    <color name="loginBkColor">#f0f0f0</color>
+
+    <!--colros for card-->
+    <color name="whiteCardColor">#fff</color>
+    <color name="white_greyish">#EEEEEE</color>
+    <color name="button_selectorcolor">#9E9E9E</color>
+
+    <color name="silver_400">#CBC9C9</color>
+    <color name="azac_500">#DEB334</color>
+    <color name="cod_gray_900">#171516</color>
+    <color name="selected_radio_color">#E1F5FE</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#CBC9C9</color>
+</resources>

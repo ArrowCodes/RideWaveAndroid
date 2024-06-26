@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "822183460667",
+    "project_id": "ridewave-98978",
+    "storage_bucket": "ridewave-98978.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822183460667:android:9cf9e93187903c1492c11e",
+        "android_client_info": {
+          "package_name": "com.ridewave.ridewave"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP6lsfj2ciJjA_bW_w5Li9B68IRWvSUtw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,209 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="40dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Account"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your basic details"
+        android:textSize="14sp"
+        android:layout_gravity="center"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/camera"
+        android:id="@+id/imageView"
+        android:layout_gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+
+        <!-- First Name Label and EditText -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First Name"
+                android:textSize="14sp"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:hint="John"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_grey"
+                android:textSize="14sp"
+                android:id="@+id/fnameT"
+                android:background="@drawable/edit_text_background"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <!-- Last Name Label and EditText -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Name"
+                android:textSize="14sp"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:hint="Doe"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_grey"
+                android:textSize="14sp"
+                android:id="@+id/lnameT"
+                android:background="@drawable/edit_text_background"
+                android:padding="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Email Label and EditText -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/sf"
+        android:textColor="@color/black"
+        android:textColorHint="@color/light_grey"
+        android:hint="johndoe@example.com"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:id="@+id/emailT"
+        android:background="@drawable/edit_text_background" />
+
+    <!-- Gender Label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gender"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp" />
+
+    <!-- RadioGroup for Gender selection -->
+    <RadioGroup
+        android:id="@+id/radioGroupGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp">
+
+        <RadioButton
+            android:id="@+id/radioButtonMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:textSize="14sp"
+            android:buttonTint="@color/colorPrimary" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:textSize="14sp"
+            android:layout_marginStart="20dp"
+            android:buttonTint="@color/colorPrimary" />
+
+        <RadioButton
+            android:id="@+id/radioButtonOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other"
+            android:textSize="14sp"
+            android:layout_marginStart="20dp"
+            android:buttonTint="@color/colorPrimary" />
+
+    </RadioGroup>
+
+    <!-- Referral Code Label and EditText -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Referral Code (Optional)"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/sf"
+        android:textColor="@color/black"
+        android:textColorHint="@color/light_grey"
+        android:hint="eg 54b6a7"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:id="@+id/referralT"
+        android:background="@drawable/edit_text_background" />
+
+
+    <com.appz.abhi.simplebutton.SimpleButton
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/registerB"
+        android:padding="16dp"
+        android:text="Register"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/sf"
+        app:button_background_color="@color/colorPrimary"
+        app:button_pressed_color="@color/colorPrimary"/>
+</LinearLayout>
+

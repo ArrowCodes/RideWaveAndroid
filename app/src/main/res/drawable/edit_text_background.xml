@@ -1,0 +1,23 @@
+<!-- edit_text_background.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background for focused state -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" /> <!-- Background color of the EditText -->
+            <corners android:radius="8dp" /> <!-- Radius of the rounded corners -->
+            <stroke
+                android:width="1sp"
+                android:color="@color/colorPrimary" /> <!-- Border color for focused state -->
+        </shape>
+    </item>
+    <!-- Default background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" /> <!-- Background color of the EditText -->
+            <corners android:radius="8dp" /> <!-- Radius of the rounded corners -->
+            <stroke
+                android:width="1sp"
+                android:color="@color/light_grey" /> <!-- Default border color -->
+        </shape>
+    </item>
+</selector>

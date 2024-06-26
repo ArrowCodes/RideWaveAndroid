@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterSignActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@drawable/navigation"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/navigation_string"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/comorant"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            />
+
+        <com.appz.abhi.simplebutton.SimpleButton
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/sign_inB"
+            android:padding="16dp"
+            android:text="Sign In"
+            android:fontFamily="@font/comorant"
+            android:layout_marginTop="20dp"
+            app:button_background_color="@color/colorPrimary"
+            app:button_pressed_color="@color/colorPrimary"
+            app:button_shape="fillet"
+            app:button_text_color="@color/white"
+            app:button_type="solid"
+            tools:ignore="HardcodedText" />
+
+        <com.appz.abhi.simplebutton.SimpleButton
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/registerB"
+            android:padding="16dp"
+            android:text="Register"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/comorant"
+            app:button_background_color="@color/colorPrimary"
+            app:button_pressed_color="@color/colorPrimary"
+            app:button_shape="fillet"
+            app:button_text_color="@color/colorPrimary"
+            app:button_type="outline"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+</ScrollView>

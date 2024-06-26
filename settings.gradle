@@ -1,0 +1,2 @@
+rootProject.name = "RideWave"
+include ':app'

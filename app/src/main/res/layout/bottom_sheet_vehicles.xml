@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/bottom_sheet_vehicles"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:text="Choose a ride"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/sf"
+        android:id="@+id/choose_ride_tv"
+        tools:ignore="HardcodedText" />
+
+    <ProgressBar
+        android:id="@+id/progressBarSearch"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:indeterminate="true" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:id="@+id/linear_van"
+
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@drawable/motorbike"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="Uber Boda"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:id="@+id/van_txt"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="Kshs.1200"
+                android:textSize="12sp"
+                android:id="@+id/van_fare_txt"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:paddingBottom="15dp"
+            android:gravity="center"
+            android:id="@+id/linear_go"
+
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@drawable/uberxbg"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="Uber Go"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:scaleType="fitCenter"
+                android:id="@+id/go_txt"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="Kshs.800"
+                android:textSize="12sp"
+                android:id="@+id/go_fare_txt"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:id="@+id/linear_x"
+
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@drawable/ubergotest"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="Uber X"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:id="@+id/x_txt"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sf"
+                android:text="Kshs.1000"
+                android:textSize="12sp"
+                android:id="@+id/x_fare_txt"
+                />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <com.appz.abhi.simplebutton.SimpleButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/confirm_vehicleB"
+        android:padding="16dp"
+        android:text="Book A Ride"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/sf"
+        app:button_background_color="@color/colorPrimary"
+        app:button_pressed_color="@color/colorPrimary"
+        app:button_shape="fillet"
+        app:button_text_color="@color/white"
+        app:button_type="solid"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>
