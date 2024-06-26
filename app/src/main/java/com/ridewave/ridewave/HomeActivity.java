@@ -313,7 +313,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         confirm_vehicleB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                confirm_vehicle();
+                //confirm_vehicle();
             }
         });
 
@@ -525,44 +525,30 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         Trips trip = new Trips(trip_id,trip_unique_key_x,pickup,drop_off,String.valueOf(origin_latitude),String.valueOf(origin_longitude),String.valueOf(destination_latitude),String.valueOf(destination_longitude),trip_distance,trip_duration,distance_numeric,rider,"","",distance_numeric,"requested",text_date,date_x,time_x,"","","");
         tripsDatabaseReference.child(trip_id).setValue(trip).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
+                sheetBehavior_initial.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 trip_unique_key = trip_unique_key_x;
-                 snip_vehicles();
+                 snip_vehicles(distance_numeric);
             } else {
                 Toast.makeText(HomeActivity.this, "Trip initialization failed", Toast.LENGTH_SHORT).show();
             }
         });
     }
-    private void snip_vehicles()
+    @SuppressLint("SetTextI18n")
+    private void snip_vehicles(String trip_distance)
     {
-        vehiclesDatabaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    VehicleTypes vehicleType = snapshot.getValue(VehicleTypes.class);
-                    if (vehicleType != null) {
-                        displayVehicleTypeRates(vehicleType);
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle possible errors.
-                Toast.makeText(HomeActivity.this, "Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e("TAG", "Database error: " + databaseError.getMessage());
-            }
-        });
+        double calc_distance = Double.valueOf(trip_distance);
+        x_fare = String.valueOf(200 + calc_distance * 20);
+        van_fare = String.valueOf(300 + calc_distance * 30);
+        go_fare = String.valueOf(200 + calc_distance * 20);
+        go_fare_txt.setText("Kshs."+go_fare);
+        x_fare_txt.setText("Kshs."+x_fare);
+        van_fare_txt.setText("Kshs."+van_fare);
+        sheetBehavior_vehicles.setState(BottomSheetBehavior.STATE_EXPANDED);
     }
 
-    private void displayVehicleTypeRates(VehicleTypes vehicleType) {
-        String message = "Base Rate: " + vehicleType.getBase_rate() + ", Rate per km: " + vehicleType.getRate_per_km();
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
 
-    private void confirm_vehicle()
-    {
 
-    }
+
 
     private void startPlaceAutocomplete() {
         List<com.google.android.libraries.places.api.model.Place.Field> fields = Arrays.asList(com.google.android.libraries.places.api.model.Place.Field.ID, com.google.android.libraries.places.api.model.Place.Field.NAME, com.google.android.libraries.places.api.model.Place.Field.ADDRESS, com.google.android.libraries.places.api.model.Place.Field.LAT_LNG);
