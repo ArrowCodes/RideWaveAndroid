@@ -72,6 +72,11 @@ import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.maps.route.RouteDrawer;
 
 import org.json.JSONArray;
@@ -81,9 +86,11 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.Timer;
+import java.util.UUID;
 
 import at.markushi.ui.CircleButton;
 import es.dmoral.toasty.Toasty;
@@ -151,12 +158,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private Animation slideUpAnimation;
     private Animation slideDownAnimation;
     private View up_view;
+    private DatabaseReference tripsDatabaseReference,vehiclesDatabaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        //initialize databases
+        tripsDatabaseReference = FirebaseDatabase.getInstance().getReference("trips");
+        vehiclesDatabaseReference = FirebaseDatabase.getInstance().getReference("vehicle_types");
         //initialize map card view
         map_card_view = findViewById(R.id.map_card_view);
         slideUpAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_up);
@@ -302,7 +313,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         confirm_vehicleB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //confirm_vehicle();
+                confirm_vehicle();
             }
         });
 
@@ -385,7 +396,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 confirm_trip_initialB.setEnabled(false);
-                //confirm_initial_request();
+                confirm_initial_request();
             }
         });
 
@@ -498,6 +509,59 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startPlaceAutocompleteTwo();
             }
         });
+    }
+
+    private void confirm_initial_request()
+    {
+        Calendar calendar = Calendar.getInstance();
+        GetTimeData getTimeData = new GetTimeData(calendar);
+        String trip_id = tripsDatabaseReference.push().getKey();
+        String rider = SharedPrefManager.getInstance(getApplicationContext()).getKeyUserId();
+        final String text_date = getTimeData.getTextDate();
+        final String time_x = getTimeData.getHour();
+        final String date_x = getTimeData.getSysDate();
+        String trip_unique_key_x = UUID.randomUUID().toString().replace("-", "");
+        //trips
+        Trips trip = new Trips(trip_id,trip_unique_key_x,pickup,drop_off,String.valueOf(origin_latitude),String.valueOf(origin_longitude),String.valueOf(destination_latitude),String.valueOf(destination_longitude),trip_distance,trip_duration,distance_numeric,rider,"","",distance_numeric,"requested",text_date,date_x,time_x,"","","");
+        tripsDatabaseReference.child(trip_id).setValue(trip).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                trip_unique_key = trip_unique_key_x;
+                 snip_vehicles();
+            } else {
+                Toast.makeText(HomeActivity.this, "Trip initialization failed", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void snip_vehicles()
+    {
+        vehiclesDatabaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    VehicleTypes vehicleType = snapshot.getValue(VehicleTypes.class);
+                    if (vehicleType != null) {
+                        displayVehicleTypeRates(vehicleType);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle possible errors.
+                Toast.makeText(HomeActivity.this, "Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("TAG", "Database error: " + databaseError.getMessage());
+            }
+        });
+    }
+
+    private void displayVehicleTypeRates(VehicleTypes vehicleType) {
+        String message = "Base Rate: " + vehicleType.getBase_rate() + ", Rate per km: " + vehicleType.getRate_per_km();
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+
+    private void confirm_vehicle()
+    {
+
     }
 
     private void startPlaceAutocomplete() {
